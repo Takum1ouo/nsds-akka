@@ -1,16 +1,15 @@
-# NSDS Akka - Lab 2 Exercise 6
+# NSDS - Akka exercises
 
-Busy server that turns text into upper case.
+My solutions to the Akka lab exercises of Networked Software for Distributed Systems (Politecnico di Milano).
+Each exercise is in its own package under `src/main/java/com/`; copy it into the course `nsds-akka` project and run its `Main`.
 
-- The server handles one message at a time. Processing takes 2 seconds (`scheduleOnce` + `DoneMsg`, no `Thread.sleep`).
-- While busy, new messages are stashed and released with `unstashAll()` when it is done.
-- The server switches between two states with `become`: `ready()` and `busy()`.
-- Two clients send messages; each one only gets its own replies back.
+## Exercise 6 (`com.ex6`)
 
-## Run
-
-Copy `src/main/java/com/ex6` into the course `nsds-akka` project and run `com.ex6.Main`. Press Enter to exit.
-
-## Author
-
-Chuanhao Cai
+- Write a client actor that asks a server actor to uppercase one TextMsg at a time
+  - The server actor replies after a short delay that emulates some longer processing
+  - While processing, the server enters a "busy" behavior and buffers new requests arriving meanwhile
+  - This means it must NOT block while processing
+  - When processing a message completes, the server sends the reply to the client, becomes ready again, and processes buffered messages
+  - For testing, create two clients issuing a series of commands in parallel
+- You may use `getContext().system().scheduler().scheduleOnce()` in the solution, for example:
+  `…scheduleOnce(delay, recipient, msg, getContext().dispatcher(), sender);`
