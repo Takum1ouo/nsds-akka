@@ -3,6 +3,10 @@
 My solutions to the Akka lab exercises of Networked Software for Distributed Systems (Politecnico di Milano).
 Each exercise is in its own package under `src/main/java/com/`; copy it into the course `nsds-akka` project and run its `Main`.
 
+## Exercises 3 + 5 (`com.ex3_5`)
+
+Contact list server with a supervisor; see the [statements](src/main/java/com/ex3_5/README.md).
+
 ## Exercise 6 (`com.ex6`)
 
 - Write a client actor that asks a server actor to uppercase one TextMsg at a time
