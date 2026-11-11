@@ -1,7 +1,9 @@
-# NSDS - Akka exercises
+# NSDS - lab exercises
 
-My solutions to the Akka lab exercises of Networked Software for Distributed Systems (Politecnico di Milano).
-Each exercise is in its own package under `src/main/java/com/`; copy it into the course `nsds-akka` project and run its `Main`.
+My solutions to the lab exercises of Networked Software for Distributed Systems (Politecnico di Milano).
+
+- **Akka**: each exercise is in its own package under `src/main/java/com/`; copy it into the course `nsds-akka` project and run its `Main`.
+- **Kafka**: see the [kafka](kafka/README.md) folder (lab 1, exercises 1-4).
 
 ## Exercises 3 + 5 (`com.ex3_5`)
 
